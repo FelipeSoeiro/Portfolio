@@ -478,31 +478,68 @@ main .sobre {
   .skill-box {
     display: inline-block;
     width: 150px;
-    height: 200px;
+    height: 150px;
     margin: 20px;
     border-radius: 20px;
-    background-color: rgb(0, 255, 170);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-    border: solid;
+    background-color: #0c1d20;
+    box-shadow: 0px 2px 5px rgba(0, 255, 170, 0.4);
+    border-top: solid;
+    border-bottom: solid;
     border-color:  rgb(0, 255, 170);
     position: relative;
     opacity: 0;
     animation: slideTop 1.5s ease forwards;
-    animation-delay: calc(.4s * var(--i));
+    animation-delay: calc(.1s * var(--i));
 }
   
 
   .skill-box:hover {
     position: relative;
     top: -10px;
-    box-shadow: 0 20px 40px rgba(0, 255, 170, 0.4);
+    box-shadow: 0 0 40px 0 rgba(0, 255, 170, 0.4);
     border: solid;
     border-width: 2px;
     border-color: rgb(0, 255, 170);
-    background-color: rgb(0, 255, 255);
+    background-color: rgb(0, 255, 170);
     color: white;
     transition: top 0.3s ease-out, box-shadow 0.3s ease-out;
   }
+
+  .skill-box :hover:after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 150px;
+    height: 4px;
+    background-color: rgb(0, 255, 170);
+    border-radius: 5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+
+  }
+  
+  .skill-box:after {
+  width: 100%;
+}
+
+.skill-box:not(:hover):after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 150px;
+    height: 2px;
+    background-color: rgb(0, 255, 170);
+    border-radius: 5px;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+
+  }
+  
+  .skill-box:not(:hover):after{
+  width: 100%;
+}
   
   /*.skill-box::before {
     content: "";
@@ -526,13 +563,13 @@ main .sobre {
   
   .skill-icon {
     font-size: 40px;
-    color: #1f242d;
-    margin-top: 30px;
+    color: rgb(0, 255, 170);
+    margin-top: 17px;
   }
   
   .skills-section h3 {
     font-size: 23px;
-    color: #1f242d;
+    color: rgb(0, 255, 170);
     margin-top: 10px;
     font-weight: bolder;
   }
@@ -540,13 +577,16 @@ main .sobre {
   
   
   /*Skill-box com mudança de cor*/
-  /*.skill-box:hover .skill-icon {
-    color: rgb(0, 255, 170);
+  .skill-box:hover .skill-icon {
+    color: #1f242d;
   }
   
   .skill-box:hover h3 {
-    color: rgb(0, 255, 170);
-  }*/
+    color: #1f242d;
+  }
+
+  /*Secao para colocar barra abaixo das palavras do menu */
+  
 
 
 /*Seta de retorno ao início e rodapé*/
