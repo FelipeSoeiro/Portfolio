@@ -94,8 +94,6 @@ navLinks.forEach(link => {
   });
 });
 
-
-
 // obtém o link dentro do elemento .footer
 const scrollToTopLink = document.querySelector('.footer-iconTop a');
 
@@ -109,3 +107,15 @@ scrollToTopLink.addEventListener('click', (e) => {
     behavior: 'smooth'
   });
 });
+
+//Scroll reveal
+
+ScrollReveal({ 
+  reset: true,
+  distance: '80px',
+  duration: 2000,
+  delay: 200
+});
+
+ScrollReveal().reveal('header', {origin: 'top'});
+ScrollReveal().reveal('.home', {origin: 'bottom'});
