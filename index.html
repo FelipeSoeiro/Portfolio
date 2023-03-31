@@ -48,7 +48,8 @@
     <script src="script.js"></script>
 
     <!--Seção Sobre mim-->
-    <main id="sobremim">
+
+    <main>
         <article aria-label="seção sobre mim" class="sobre">
             <div class="sobre_titulo">
                 <h1>Sobre mim</h1>
@@ -61,6 +62,7 @@
             </div>
             <img src="img/Sobremim.jpg" alt="imagem de uma pessoa ilustrativa">
             <div class="sobre_conteudo">
+              <div id="sobremim"></div>
                 <div class="sobre_texto">
                     <h1>Dev. Felipe Soeiro</h1>
                     <p>
@@ -80,46 +82,55 @@
             </div>
         </article>
     </main>
-
     <!--Seção de Habilidades-->
-
-    </section>
-    
-    <section id="habilidades">
-    <div class="skills-section">
-        <h2>Habilidades</h2>
-        <div class="skill-box">
-          <div class="skill-icon">
-            <i class="fab fa-html5"></i>
+    <section>
+      <div class="skills-section">
+          <h2>Habil<span>idades</span></h2>
+          <div id="habilidades"></div>
+          <div class="skill-box" style="--i:1;">
+            <div class="skill-icon">
+              <i class="fab fa-html5"></i>
+            </div>
+            <h3>HTML</h3>
           </div>
-          <h3>HTML</h3>
-        </div>
-        <div class="skill-box">
-          <div class="skill-icon">
-            <i class="fab fa-css3-alt"></i>
+          <div class="skill-box" style="--i:2;">
+            <div class="skill-icon">
+              <i class="fab fa-css3-alt"></i>
+            </div>
+            <h3>CSS</h3>
           </div>
-          <h3>CSS</h3>
-        </div>
-        <div class="skill-box">
-          <div class="skill-icon">
-            <i class="fab fa-js"></i>
+          <div class="skill-box" style="--i:3;">
+            <div class="skill-icon">
+              <i class="fab fa-js"></i>
+            </div>
+            <h3>JAVASCRIPT</h3>
           </div>
-          <h3>JAVASCRIPT</h3>
-        </div>
-        <div class="skill-box">
-          <div class="skill-icon">
-            <i class="fab fa-java"></i>
+          <div class="skill-box" style="--i:4;">
+            <div class="skill-icon">
+              <i class="fab fa-java"></i>
+            </div>
+            <h3>JAVA</h3>
           </div>
-          <h3>JAVA</h3>
-        </div>
-        <div class="skill-box">
-          <div class="skill-icon">
-            <i class="fab fa-python"></i>
+          <div class="skill-box" style="--i:5;">
+            <div class="skill-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <h3>PYTHON</h3>
           </div>
-          <h3>PYTHON</h3>
-        </div>
       </div>
     </section>
+
+    <!-- Seta de retorno ao início-->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023 by Felipe Soeiro | All Rights Reserved.</p>
+      </div>
+
+      <div class="footer-iconTop">
+        <a href="#top"><i class='bx bx-up-arrow-alt'></i></a>
+      </div>
+    </footer>
+    
     
 </body>
 </html>

@@ -323,7 +323,7 @@ main .sobre {
 
 
 .sobre img {
-    animation: ladoSecao .5s ease-in-out forwards;
+    animation: slideBottom 2s ease-in-out forwards;
     cursor: pointer;
     grid-row: 2;
     max-width: 100%;
@@ -417,18 +417,47 @@ main .sobre {
 
 /* SEÇÃO HABILIDADES */
 
+
   .skills-section {
     text-align: center;
-    margin: 50px 0;
+    margin: 50px 0 150px;
   }
+
+  .skills-section h2 {
+    font-size: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    margin-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .skills-section h2  span{
+    color:rgb(0, 255, 170);
+    margin-bottom: 50px;
+  }
+
+  .skills-section h2:after {
+    background-color: rgb(0, 255, 170);
+    height: 3px;
+    width: 30%;
+    margin: 10px 0 0 465px;
+    content: '';
+    display: block;
+    border-radius: 5px;
+}
   
-  .skill-box {
+/*Skill-box com mudança de cor*/
+  /*.skill-box {
     display: inline-block;
     width: 150px;
     height: 200px;
     margin: 20px;
     border-radius: 10px;
-    background-color: rgb(0, 255, 170);
+    background: linear-gradient(135deg, rgb(0, 255, 170), rgb(0, 180, 120));
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease-in-out;
     border: solid;
@@ -444,8 +473,56 @@ main .sobre {
     border-color: rgb(0, 255, 170);
     background: transparent;
     color: rgb(0, 255, 170);
-  }
+  }*/
 
+  .skill-box {
+    display: inline-block;
+    width: 150px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: rgb(0, 255, 170);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    border: solid;
+    border-color:  rgb(0, 255, 170);
+    position: relative;
+    opacity: 0;
+    animation: slideTop 1.5s ease forwards;
+    animation-delay: calc(.4s * var(--i));
+}
+  
+
+  .skill-box:hover {
+    position: relative;
+    top: -10px;
+    box-shadow: 0 20px 40px rgba(0, 255, 170, 0.4);
+    border: solid;
+    border-width: 2px;
+    border-color: rgb(0, 255, 170);
+    background-color: rgb(0, 255, 255);
+    color: white;
+    transition: top 0.3s ease-out, box-shadow 0.3s ease-out;
+  }
+  
+  /*.skill-box::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    background: rgb(0, 255, 255);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  
+  .skill-box:hover::before {
+    opacity: 1;
+  } */
+  
   
   .skill-icon {
     font-size: 40px;
@@ -459,11 +536,52 @@ main .sobre {
     margin-top: 10px;
     font-weight: bolder;
   }
+
   
-  .skill-box:hover .skill-icon {
+  
+  /*Skill-box com mudança de cor*/
+  /*.skill-box:hover .skill-icon {
     color: rgb(0, 255, 170);
   }
   
   .skill-box:hover h3 {
     color: rgb(0, 255, 170);
-  }
+  }*/
+
+
+/*Seta de retorno ao início e rodapé*/
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0.2rem 9%;
+    background:rgba(0, 0, 0, 0.3); /*var(--second-bg-color);*/
+}
+
+.footer-text p {
+    font-size: 1rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .4rem;
+    background: rgb(0, 255, 170); /*var(--main-color);*/
+    border-radius: .8rem;
+    transition: .5s ease;
+    margin-right: -80px;
+}
+
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem rgb(0, 255, 170);
+}
+
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color:#1f242d  /*var(--second-bg-color);*/
+}

@@ -6,21 +6,89 @@ var typed = new Typed(".mutiple-text", {
     loop: true
 })
 
-document.querySelectorAll('.navbar a').forEach(link => {
+
+
+//document.querySelectorAll('.footer-iconTop').forEach(link => {
+ // link.addEventListener('click', (e) => {
+ //   e.preventDefault(); // impede o comportamento padrão do link
+    
+    // obtém o elemento correspondente ao link clicado
+ //   const target = document.querySelector(link.getAttribute('href'));
+    
+//    // rola para o elemento correspondente
+//    target.scrollIntoView({ behavior: 'smooth' });
+//  })
+//})
+
+
+
+// Seção de link ativo de scroll 
+//let sections = document.querySelectorAll('section');
+//let navLinks= document.querySelectorAll('.navbar a');
+
+//window.onscroll = () => {
+  //sections.forEach(sec=> {
+    //let top = window.scrollY;
+    //let offset= sec.offsetTop - 150;
+    //let height = sec.offsetHeight;
+    //let id = sec.getAttribute ('id');
+
+    //if (top >= offset && top < offset + height) {
+        //navLinks.forEach(links => {
+          //links.classList.remove('active');
+          //document.querySelector('.navbar a[href*="' + id + '"]').classList.add('active');
+        //});
+    //};
+  //});
+//};
+
+
+// obtém todos os links na barra de navegação
+const navLinks = document.querySelectorAll('.navbar a');
+
+// adiciona um ouvinte de rolagem para a janela
+window.addEventListener('scroll', () => {
+  // percorre todos os links na barra de navegação
+  navLinks.forEach(link => {
+    // obtém o elemento correspondente ao link
+    const section = document.querySelector(link.getAttribute('href'));
+    
+    // verifica se a seção está visível na janela
+    if (isInViewport(section)) {
+      // adiciona a classe "active" ao link correspondente
+      link.classList.add('active');
+    } else {
+      // remove a classe "active" do link correspondente
+      link.classList.remove('active');
+    }
+  });
+});
+
+// função que verifica se um elemento está visível na janela
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// adiciona um ouvinte de clique a cada link na barra de navegação
+navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault(); // impede o comportamento padrão do link
     
     // obtém o elemento correspondente ao link clicado
     const target = document.querySelector(link.getAttribute('href'));
     
-    // rola para o elemento correspondente
+    // rola para o elemento correspondente com suavidade
     target.scrollIntoView({ behavior: 'smooth' });
     
-    // adiciona a classe active no link clicado e remove a classe active dos outros links
-    document.querySelectorAll('.navbar a').forEach(otherLink => {
-      if (otherLink !== link) {
-        otherLink.classList.remove('active');
-      }
+    // adiciona a classe "active" ao link correspondente
+    navLinks.forEach(otherLink => {
+      otherLink.classList.remove('active');
     });
     link.classList.add('active');
   });
@@ -28,3 +96,16 @@ document.querySelectorAll('.navbar a').forEach(link => {
 
 
 
+// obtém o link dentro do elemento .footer
+const scrollToTopLink = document.querySelector('.footer-iconTop a');
+
+// adiciona um ouvinte de clique ao link
+scrollToTopLink.addEventListener('click', (e) => {
+  e.preventDefault(); // impede o comportamento padrão do link
+
+  // rola para o topo da página com suavidade
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
