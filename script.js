@@ -6,6 +6,60 @@ var typed = new Typed(".mutiple-text", {
     loop: true
 })
 
+// obtém todos os links na barra de navegação
+const navLinks = document.querySelectorAll('.navbar a');
+
+// adiciona um ouvinte de rolagem para a janela
+window.addEventListener('scroll', () => {
+  // percorre todos os links na barra de navegação
+  navLinks.forEach(link => {
+    // obtém o elemento correspondente ao link
+    const section = document.querySelector(link.getAttribute('href'));
+    
+    // verifica se a seção está visível na janela
+    if (isInViewport(section)) {
+      // adiciona a classe "active" ao link correspondente
+      link.classList.add('active');
+    } else {
+      // remove a classe "active" do link correspondente
+      link.classList.remove('active');
+    }
+  });
+});
+
+// função que verifica se um elemento está visível na janela
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+//Scroll reveal
+
+ScrollReveal({ 
+  reset: true,
+  distance: '80px',
+  duration: 2000,
+  delay: 200
+});
+
+
+ScrollReveal().reveal('.home-content', {origin: 'left'});
+ScrollReveal().reveal('.home-img', {origin: 'right'});
+
+
+ScrollReveal().reveal('.imagem_sobremim', {origin: 'left'});
+ScrollReveal().reveal('.sobre_texto', {origin: 'right'});
+
+ScrollReveal().reveal('.titulo-habilidades', {origin: 'top'});
+ScrollReveal().reveal('.skill-wrapper', {origin: 'bottom'});
+
+
+
 
 
 //document.querySelectorAll('.footer-iconTop').forEach(link => {
@@ -42,39 +96,6 @@ var typed = new Typed(".mutiple-text", {
   //});
 //};
 
-
-// obtém todos os links na barra de navegação
-const navLinks = document.querySelectorAll('.navbar a');
-
-// adiciona um ouvinte de rolagem para a janela
-window.addEventListener('scroll', () => {
-  // percorre todos os links na barra de navegação
-  navLinks.forEach(link => {
-    // obtém o elemento correspondente ao link
-    const section = document.querySelector(link.getAttribute('href'));
-    
-    // verifica se a seção está visível na janela
-    if (isInViewport(section)) {
-      // adiciona a classe "active" ao link correspondente
-      link.classList.add('active');
-    } else {
-      // remove a classe "active" do link correspondente
-      link.classList.remove('active');
-    }
-  });
-});
-
-// função que verifica se um elemento está visível na janela
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
 // adiciona um ouvinte de clique a cada link na barra de navegação
 //navLinks.forEach(link => {
  // link.addEventListener('click', (e) => {
@@ -107,29 +128,3 @@ function isInViewport(element) {
  //   behavior: 'smooth'
  // });
 //});
-
-//Scroll reveal
-
-ScrollReveal({ 
-  reset: true,
-  distance: '80px',
-  duration: 2000,
-  delay: 200
-});
-
-
-ScrollReveal().reveal('.home-content', {origin: 'left'});
-ScrollReveal().reveal('.home-img', {origin: 'right'});
-
-
-ScrollReveal().reveal('.imagem_sobremim', {origin: 'left'});
-ScrollReveal().reveal('.sobre_texto', {origin: 'right'});
-
-ScrollReveal().reveal('.titulo-habilidades', {origin: 'top'});
-ScrollReveal().reveal('.skill-wrapper', {origin: 'bottom'});
-
-
-
-
-
-
