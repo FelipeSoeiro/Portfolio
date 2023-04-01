@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 
@@ -323,7 +324,7 @@ main .sobre {
 
 
 .sobre img {
-    animation: slideBottom 2s ease-in-out forwards;
+    /*animation: slideBottom 2s ease-in-out forwards;*/
     cursor: pointer;
     grid-row: 2;
     max-width: 100%;
@@ -333,7 +334,7 @@ main .sobre {
 
 
 .sobre_conteudo {
-    animation: sobeSecao .6s ease-in-out forwards;
+    /*animation: sobeSecao .6s ease-in-out forwards;*/
     grid-column: 2/-1;
     display: grid;
     color: #707070;
@@ -428,7 +429,7 @@ main .sobre {
     font-weight: 600;
     cursor: default;
     opacity: 0;
-    animation: slideRight 1s ease forwards;
+    animation: slideBottom 1s ease forwards;
     margin-bottom: 50px;
     font-family: 'Poppins', sans-serif;
   }
@@ -486,7 +487,7 @@ main .sobre {
     height: 120px;
     margin: 20px;
     border-radius: 20px;
-    background-color: #0c1d20;
+    background-color: #050b0c;
     box-shadow: 0px 2px 5px rgba(0, 255, 170, 0.4);
     border-top: solid;
     border-bottom: solid;

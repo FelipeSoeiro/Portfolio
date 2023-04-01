@@ -76,37 +76,37 @@ function isInViewport(element) {
 }
 
 // adiciona um ouvinte de clique a cada link na barra de navegação
-navLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault(); // impede o comportamento padrão do link
+//navLinks.forEach(link => {
+ // link.addEventListener('click', (e) => {
+  //  e.preventDefault(); // impede o comportamento padrão do link
     
     // obtém o elemento correspondente ao link clicado
-    const target = document.querySelector(link.getAttribute('href'));
+   // const target = document.querySelector(link.getAttribute('href'));
     
     // rola para o elemento correspondente com suavidade
-    target.scrollIntoView({ behavior: 'smooth' });
+   // target.scrollIntoView({ behavior: 'smooth' });
     
     // adiciona a classe "active" ao link correspondente
-    navLinks.forEach(otherLink => {
-      otherLink.classList.remove('active');
-    });
-    link.classList.add('active');
-  });
-});
+   // navLinks.forEach(otherLink => {
+   //   otherLink.classList.remove('active');
+   // });
+   // link.classList.add('active');
+ // });
+//});
 
 // obtém o link dentro do elemento .footer
-const scrollToTopLink = document.querySelector('.footer-iconTop a');
+//const scrollToTopLink = document.querySelector('.footer-iconTop a');
 
 // adiciona um ouvinte de clique ao link
-scrollToTopLink.addEventListener('click', (e) => {
-  e.preventDefault(); // impede o comportamento padrão do link
+//scrollToTopLink.addEventListener('click', (e) => {
+//  e.preventDefault(); // impede o comportamento padrão do link
 
   // rola para o topo da página com suavidade
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
+//  window.scrollTo({
+ //   top: 0,
+ //   behavior: 'smooth'
+ // });
+//});
 
 //Scroll reveal
 
@@ -117,5 +117,19 @@ ScrollReveal({
   delay: 200
 });
 
-ScrollReveal().reveal('header', {origin: 'top'});
-ScrollReveal().reveal('.home', {origin: 'bottom'});
+
+ScrollReveal().reveal('.home-content', {origin: 'left'});
+ScrollReveal().reveal('.home-img', {origin: 'right'});
+
+
+ScrollReveal().reveal('.imagem_sobremim', {origin: 'left'});
+ScrollReveal().reveal('.sobre_texto', {origin: 'right'});
+
+ScrollReveal().reveal('.titulo-habilidades', {origin: 'top'});
+ScrollReveal().reveal('.skill-wrapper', {origin: 'bottom'});
+
+
+
+
+
+

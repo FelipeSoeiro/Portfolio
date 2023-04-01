@@ -11,6 +11,8 @@
 </head>
 
 <body>
+   
+
     <div id="top"></div>
     <header class="header">
         <a href="#" class="logo">Port<span>folio.</span></a>
@@ -19,7 +21,7 @@
             <a href="#top" style="--i:1;" class="active">Inicio</a>
             <a href="#sobremim" style="--i:2;">Sobre mim</a>
             <a href="#habilidades" style="--i:3;">Habilidades</a>
-            <a href="#contato" style="--i:4;">Contato</a>
+            <!--<a href="#contato" style="--i:4;">Contato</a>-->
         </nav>
     </header>
 
@@ -44,8 +46,8 @@
         
     </section>
 
-    <script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
-    <script src="script.js"></script>
+   
+    
 
     <!--Seção Sobre mim-->
   
@@ -61,7 +63,9 @@
                     <span></span>
                 </div>
             </div>
-            <img src="img/Sobremim.jpg" alt="imagem de uma pessoa ilustrativa">
+            <div class="imagem_sobremim">
+              <img src="img/Sobremim.jpg" alt="imagem de uma pessoa ilustrativa">
+            </div>
             <div class="sobre_conteudo">
               <div id="sobremim"></div>
                 <div class="sobre_texto">
@@ -74,21 +78,24 @@
                 </div>
                 <div class="sobre_info">
                     <p><i class="fa-solid fa-calendar-days"></i>Idade - 31 anos</p>
-                    <p><i class="fa-solid fa-laptop-code"></i></i>Data de nascimento: 05 Fev 1992</p>
                     <p><i class="fa-solid fa-location-dot"></i>Salvador-Ba, Brasil</p>
                     <p><i class="fa-brands fa-github"></i>https://github.com/FelipeSoeiro</p>
-                    <p><i class="fa-solid fa-phone-volume"></i>(71) 99263-6208</p>
                     <p><i class="fa-solid fa-envelope"></i>felipe_soeirojl@hotmail.com</p>
+                    <!--<p><i class="fa-solid fa-phone-volume"></i></p>-->
+                    <!--<p><i class="fa-solid fa-laptop-code"></i></i></p>-->
                 </div>
             </div>
         </article>
     </main>
  
-      
+
+
     <section>
       <div class="skills-section">
+        <div class="titulo-habilidades">
         <h2>Habil<span>idades</span></h2>
-        <div id="habilidades"></div>
+        </div>
+        <div id="habilidades">
         <div class="skill-wrapper">
           <div class="skill-box" style="--i:1;">
             <div class="skill-icon">
@@ -143,6 +150,7 @@
       </div>
     </section>
 
+
     <!-- Seta de retorno ao início-->
     <footer class="footer">
       <div class="footer-text">
@@ -153,9 +161,11 @@
         <a href="#top"><i class='bx bx-up-arrow-alt'></i></a>
       </div>
     </footer>
-    
+
     <!--scroll reveal-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    
+   <script src="https://unpkg.com/scrollreveal"></script>
+   <!--digitação-->
+   <script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
